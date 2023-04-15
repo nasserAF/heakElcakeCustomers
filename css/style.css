@@ -2,7 +2,7 @@
 /* Define @font-face rule for custom font */
 @font-face {
      font-family: 'Al-JazeeraFont';
-     src: url('../fonts/jazeera-light.ttf');
+     src: url('../jazeera-bold.TTF');
 
    }
 /*--------------------------------------------------------------------- File Name: responsive.css ---------------------------------------------------------------------*/
