@@ -35,6 +35,85 @@
             direction: rtl;
          }
       </style>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script type="text/javascript">
+    // Initialize Firebase
+    var firebaseConfig = {
+        apiKey: "AIzaSyDba28WYXJKiP6Kz3GD-92MORoRqaAsYEw",
+        authDomain: "heakelcakedata.firebaseapp.com",
+        projectId: "heakelcakedata",
+        storageBucket: "heakelcakedata.appspot.com",
+        messagingSenderId: "385182078256",
+        appId: "1:385182078256:web:5d3ee1bdb281b52283e4f5"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    var db = firebase.firestore();
+
+    function submitForm() {
+
+        // Disable form fields
+        /* document.getElementById('name').disabled = true;
+        document.getElementById('mobile').disabled = true;
+        document.getElementById('email').disabled = true;
+        document.getElementById('address').disabled = true;
+        document.getElementById('instagram').disabled = true;
+        document.querySelector('button').disabled = true; */
+
+        // Get form data
+        var name = document.getElementById('name').value;
+        var mobile = document.getElementById('mobile').value;
+        var email = document.getElementById('email').value;
+        var address = document.getElementById('address').value;
+        var instagram = document.getElementById('instagram').value;
+
+        // Add form data to Firebase Firestore
+        db.collection("customers").add({
+            name: name,
+            mobile: mobile,
+            email: email,
+            address: address,
+            instagram: instagram
+
+        })
+            .then(function (docRef) {
+                console.log("Document written with ID: ", docRef.id);
+                // Success handling, e.g. show success message, redirect, etc.
+
+                // Clear form fields
+                document.getElementById('name').value = ""; // Clear name field
+                document.getElementById('mobile').value = ""; // Clear mobile field
+                document.getElementById('email').value = ""; // Clear email field
+                document.getElementById('address').value = ""; // Clear address field
+                document.getElementById('instagram').value = ""; // Clear instagram field
+
+                // Set focus to Name field
+                document.getElementById('name').focus();
+
+                // Enable form fields
+                /* document.getElementById('name').disabled = false;
+                document.getElementById('mobile').disabled = false;
+                document.getElementById('email').disabled = false;
+                document.getElementById('address').disabled = false;
+                document.getElementById('instagram').disabled = false;
+                document.querySelector('button').disabled = false; */
+            })
+            .catch(function (error) {
+                console.error("Error adding document: ", error);
+                // Error handling, e.g. show error message, retry, etc.
+
+                // Enable form fields
+                /* document.getElementById('name').disabled = false;
+                document.getElementById('mobile').disabled = false;
+                document.getElementById('email').disabled = false;
+                document.getElementById('address').disabled = false;
+                document.getElementById('instagram').disabled = false;
+                document.querySelector('button').disabled = false; */
+            });
+    }
+</script>
    </head>
    <!-- body -->
    <body class="main-layout">
@@ -75,7 +154,7 @@
                                  <a class="nav-link" href="#"><span class="yellow"></span>تواصل معنا</span></a>
                               </li>
                            </ul>
-                           <div class="Call" style="direction: ltr;"><a href="#"> <span class="yellow">اتصل الان : </span><span style="direction: ltr;">962799210082+</span> </a></div>
+                           <div class="Call" style="direction: ltr;"><a href="#"> <span class="yellow">اتصل الان : </span><span style="direction: ltr;">962798426325+</span> </a></div>
                         </div>
                      </nav>
                   </div>
@@ -98,25 +177,25 @@
                </div>
             </div>
             <div class="col-md-6">
-               <form id="request" class="main_form">
+               <form id="request" class="main_form" onsubmit="return false;">
                   <div class="row">
                      <div class="col-md-12 ">
-                        <input class="contactus" placeholder="الاسم" type="type" name="Name"> 
+                        <input class="contactus" placeholder="الاسم" type="type" id="name" name="name"> 
                      </div>
                      <div class="col-md-12">
-                        <input class="contactus" placeholder=" رقم الجوال" type="type" name="Phone Number">                          
+                        <input class="contactus" placeholder=" رقم الجوال" type="type" id="mobile" name="mobile">                          
                      </div>
                      <div class="col-md-12">
-                        <input class="contactus" placeholder=" البريد الالكتروني" type="type" name="Email"> 
+                        <input class="contactus" placeholder=" البريد الالكتروني" type="type" id="email" name="email"> 
                      </div>
                      <div class="col-md-12">
-                        <input class="contactus" placeholder=" العنوان - المدينة فقط" type="type" name="Email"> 
+                        <input class="contactus" placeholder=" العنوان - المدينة فقط" type="type" id="address" name="address"> 
                      </div>
                      <div class="col-md-12">
-                        <input class="contactus" placeholder=" حساب الانستقرام" type="type" name="Email"> 
+                        <input class="contactus" placeholder=" حساب الانستقرام" type="type" id="instagram" name="instagram"> 
                      </div>
                      <div class="col-sm-12">
-                        <button class="send_btn">ارسال</button>
+                        <button class="send_btn" onclick="submitForm()">ارسال</button>
                      </div>
                   </div>
                </form>
