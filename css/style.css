@@ -1,7 +1,7 @@
 
 /* Define @font-face rule for custom font */
 @font-face {
-     font-family: Al-JazeeraFont;
+     font-family: 'Al-JazeeraFont';
      src: url('../fonts/jazeera-bold.ttf');
 
    }
@@ -50,7 +50,7 @@ html {
 body {
      color: #666666;
      font-size: 14px;
-     font-family: Al-JazeeraFont, sans-serif;
+     font-family: 'Al-JazeeraFont', sans-serif;
      line-height: 1.80857;
      font-weight: normal;
 }
@@ -354,7 +354,7 @@ button {
      font-size: 17px;
      line-height: 30px;
      padding: 25px 0px 60px 0px;
-     font-family: Al-JazeeraFont, sans-serif;
+     font-family: 'Al-JazeeraFont', sans-serif;
 }
 
 .main_form {
@@ -495,7 +495,7 @@ button {
 }
 
 .food .food_box h4 {
-     font-family: Al-JazeeraFont, sans-serif;
+     font-family: 'Al-JazeeraFont', sans-serif;
      font-size: 20px;
      line-height: 30px;
      font-weight: 501;
