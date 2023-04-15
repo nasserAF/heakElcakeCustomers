@@ -1,5 +1,10 @@
 
+/* Define @font-face rule for custom font */
+@font-face {
+     font-family: Al-JazeeraFont;
+     src: url('../fonts/jazeera-bold.ttf');
 
+   }
 /*--------------------------------------------------------------------- File Name: responsive.css ---------------------------------------------------------------------*/
 
 
@@ -45,7 +50,7 @@ html {
 body {
      color: #666666;
      font-size: 14px;
-     font-family: 'Poppins', sans-serif;
+     font-family: Al-JazeeraFont, sans-serif;
      line-height: 1.80857;
      font-weight: normal;
 }
@@ -349,6 +354,7 @@ button {
      font-size: 17px;
      line-height: 30px;
      padding: 25px 0px 60px 0px;
+     font-family: Al-JazeeraFont, sans-serif;
 }
 
 .main_form {
@@ -360,7 +366,7 @@ button {
 
 .main_form .contactus {
      border: inherit;
-     margin-bottom: 70px;
+     margin-bottom: 25px;
      width: 100%;
      height: 45px;
      background: transparent;
@@ -489,7 +495,7 @@ button {
 }
 
 .food .food_box h4 {
-     font-family: 'Noto Serif', serif;
+     font-family: Al-JazeeraFont, sans-serif;
      font-size: 20px;
      line-height: 30px;
      font-weight: 501;
